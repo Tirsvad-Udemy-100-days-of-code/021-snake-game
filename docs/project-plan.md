@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, accepted by the Product Owner in chat (no QC checklist exists for the plan) | [f13d004] |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Sync applied: milestone links and issue numbers; description and topics set; open issues closed on S01's instruction in chat | [f13d004] |
+| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Sync applied: milestone links and issue numbers; description and topics set; open issues closed on S01's instruction in chat | [f13d004] |
+| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Closed the GitHub copy open issue: the copy already shows the description and topics, which this project did not set; closed on S01's instruction in chat | pending |
 
 ---
 
@@ -95,7 +95,7 @@ A No-Go on a gateway returns it to S01 for rework and moves every later date by 
 - **Starting point (closed by S01 on 2026-10-08):** S01 chose the finished `main` of [020-snake-game] as the base, not the day-20 state and not a rebuild.
 - **Repository address:** the request names `https://git.tirsystem.com/Tirsvad-Udemy-100_days_of_code` (underscores), but `origin` of this clone is `https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game` (hyphens). The plan uses the address of `origin`, where the repository exists. Confirm.
 - **Repository description and topics (closed by S01 on 2026-10-08):** S01 confirmed the text proposed in the Deliverable of [MIL-001] (a description and twelve topics, the same topics as the day-20 repository). It was set on the Gitea repository on 2026-10-08 with the Gitea API; criterion 9 of [MIL-001] checks it.
-- **GitHub copy:** a GitHub copy of this repository exists next to the Gitea one and has no description or topics yet. In the day-20 repository S01 decided that a workflow on the git host sets them, so this project does not touch it. S01 confirmed the description and topics for the Gitea repository only, so the GitHub copy was not changed. Confirm that the same holds here, or add a task.
+- **GitHub copy (closed by S01 on 2026-10-08):** a GitHub copy of this repository exists next to the Gitea one. When it was checked on 2026-10-08 it showed the same description and topics as the Gitea repository. This project did not set them: S01 confirmed the text for the Gitea repository only. In the day-20 repository a workflow on the git host sets them, so this project does not touch the GitHub copy, and no task is added.
 - **"Python greater than 3.13":** read as Python 3.13 or newer (`requires-python = ">=3.13"`); the machine of S01 has Python 3.13.14, which a strict "greater than 3.13" would exclude. Confirm.
 - **README template:** the Product Owner's README template is used. It differs from `framework/templates/README-template.md`, whose section titles `framework/scripts/check-readme.sh` expects; that check is opt-in and stays off.
 - **Inheritance and display-free tests:** the day-21 lectures teach `class Food(Turtle)`, but a class that inherits from `Turtle` needs `turtle` (and so `tkinter`) at import time, unlike `Snake`. The base keeps the inheritance and has the tests install a fake `turtle` module before they import the classes, and `main` imports `food` and `scoreboard` only when it runs. Confirm, or ask for composition instead.
