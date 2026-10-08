@@ -17,9 +17,10 @@ This repository continues
 [020-snake-game](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game)
 and starts from its finished game; `docs/project-plan.md` tells how the work is split.
 
-> **Status:** the project foundation is in place (environment, constants, tests,
-> source documentation, continuous integration). The game itself, `python -m
-> snake_game`, is added by the next milestone, `MIL-002`.
+> **Status:** the game is in the repository: `python -m snake_game` plays the whole
+> game, adopted from the finished game of 020 together with its tests. The next
+> milestone, `MIL-003`, checks it against the day-21 lectures and finishes this
+> README.
 
 ## Requirements
 
@@ -84,9 +85,27 @@ With the virtual environment active:
 python -m snake_game
 ```
 
-The game is not in the repository yet: `python -m snake_game` works once `MIL-002`
-is merged, and this section is then completed with the keys, the food, the score
-and the game-over rules.
+It opens a black 600 by 600 window titled "My Snake Game". The snake of three
+white squares starts in the middle and moves to the right by itself, 20 pixels
+every 0.1 seconds.
+
+| Key | Effect |
+| --- | --- |
+| Up, Down, Left, Right | Turn the snake |
+
+The snake never turns straight back onto itself: the arrow key opposite to the
+way it is going is ignored, even when two keys are pressed within one move.
+
+A small blue circle, the food, appears at a random place. When the head comes closer
+to it than 15 pixels the snake eats it: the food moves to a new random place, the
+snake grows by one segment, and the score at the top of the window goes up by 1
+(`Score: 0`, `Score: 1`, ...).
+
+The game is over when the head passes the wall (more than 280 pixels from the centre
+on any side) or touches the tail (comes closer than 10 pixels to a segment behind it).
+The snake stops, the text `GAME OVER` appears in the middle of the window, the score
+stays where it is, and a click on the window closes it. You can also close the window
+with its close button at any time.
 
 ## Run the tests
 
@@ -137,17 +156,18 @@ The HTML is written to `build/doxygen/index.html`. A warning fails the build.
 ├── docs/                      business case, plan, milestones, reviews
 ├── src/snake_game/            the game
 │   ├── __init__.py
-│   └── constants.py           every constant of the game
-├── tests/                     pytest tests
-│   └── test_constants.py
+│   ├── __main__.py            starts the game: python -m snake_game
+│   ├── constants.py           every constant of the game
+│   ├── food.py                the Food class (inherits from Turtle)
+│   ├── main.py                screen set-up and the main flow
+│   ├── scoreboard.py          the Scoreboard class (inherits from Turtle)
+│   └── snake.py               the Snake class
+├── tests/                     pytest tests (fakes.py holds the fake turtle and screen)
 ├── Doxyfile                   source documentation settings
 ├── LICENSE
 ├── pyproject.toml             project configuration
 └── README.md
 ```
-
-The game modules (`snake.py`, `food.py`, `scoreboard.py`, `main.py`,
-`__main__.py`) and their tests are added by `MIL-002`.
 
 ## License
 
