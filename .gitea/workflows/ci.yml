@@ -1,0 +1,46 @@
+# Continuous integration for the Snake Game.
+#
+# Run by Gitea Actions. The file lives in .gitea/workflows, not in
+# .github/workflows: GitHub refuses a push that touches .github/workflows from a
+# token without the workflow scope, and that blocks the push mirror to GitHub.
+# Runs the same checks as the README, "Run the tests".
+#
+# The tests need no display: `snake_game.snake` does not import `turtle` until a
+# real segment is created, and the tests pass fakes.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Tests
+        run: python -m pytest
+
+      - name: Lint
+        run: python -m ruff check src tests
+
+      - name: Format check
+        run: python -m ruff format --check src tests
+
+      - name: Types
+        run: python -m mypy
