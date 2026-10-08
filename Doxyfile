@@ -1,0 +1,37 @@
+# Doxygen configuration for the snake game (Python sources in src/).
+#
+# Build:  doxygen Doxyfile
+# Output: build/doxygen/index.html
+#
+# Only the settings that differ from the Doxygen defaults are listed. A warning
+# (for example an undocumented public item) fails the build.
+
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Snake Game"
+PROJECT_BRIEF          = "Snake game from Udemy's 100 Days of Code (day 21)"
+OUTPUT_DIRECTORY       = build
+HTML_OUTPUT            = doxygen
+
+# Python sources are documented with Doxygen commands in docstrings and in
+# "##" comments.
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+
+INPUT                  = src
+FILE_PATTERNS          = *.py
+RECURSIVE              = YES
+SOURCE_BROWSER         = YES
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HAVE_DOT               = NO
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_IF_INCOMPLETE_DOC = YES
+# NO: with YES, Doxygen also asks for an @return on every "-> None" function.
+WARN_NO_PARAMDOC       = NO
+WARN_AS_ERROR          = FAIL_ON_WARNINGS
