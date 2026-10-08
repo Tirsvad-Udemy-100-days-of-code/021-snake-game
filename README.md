@@ -17,10 +17,10 @@ This repository continues
 [020-snake-game](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game)
 and starts from its finished game; `docs/project-plan.md` tells how the work is split.
 
-> **Status:** the game is in the repository: `python -m snake_game` plays the whole
-> game, adopted from the finished game of 020 together with its tests. The next
-> milestone, `MIL-003`, checks it against the day-21 lectures and finishes this
-> README.
+> **Status:** the game is finished: the snake moves by itself, is steered with the
+> arrow keys, eats food and grows, the score is shown, and the game is over at the
+> wall or at the tail. It was adopted from the finished game of 020 and checked
+> against the day-21 lectures; see `docs/project-plan.md`.
 
 ## Requirements
 
@@ -168,6 +168,17 @@ The HTML is written to `build/doxygen/index.html`. A warning fails the build.
 ├── pyproject.toml             project configuration
 └── README.md
 ```
+
+Where the day-21 lessons are in the code, so that you can compare it with your own
+solution:
+
+| Day-21 lecture | Where it is |
+| --- | --- |
+| Class inheritance | `Food(Turtle)` in `food.py` and `Scoreboard(Turtle)` in `scoreboard.py` |
+| Collisions with the food | `Food.refresh`, `eat_food_if_close` in `main.py`, `FOOD_*` in `constants.py` |
+| The scoreboard | `Scoreboard.update_scoreboard` and `Scoreboard.increase_score` |
+| The wall | `Snake.hits_wall`, `WALL_LIMIT`, and `Scoreboard.game_over` for the text |
+| The tail and slicing | `Snake.extend`, `Snake.add_segment` and `Snake.hits_tail`, which loops over `segments[1:]` |
 
 ## License
 
