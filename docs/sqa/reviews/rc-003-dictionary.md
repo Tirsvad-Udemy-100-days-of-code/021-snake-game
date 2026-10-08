@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Proposed | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-10-08 | Proposed | Jens Tirsvad Nielsen | S01 | Initial version | [f13d004] |
 
 ---
 
@@ -65,3 +65,4 @@ Go — all Mandatory criteria pass (criteria 3 and 4 are N-A because the Domain 
 [QC-LANG-001]: ../../../framework/qc/qc-language-domain.md
 [BC-001]: ../../business-case.md
 [PP-001]: ../../project-plan.md
+[f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c

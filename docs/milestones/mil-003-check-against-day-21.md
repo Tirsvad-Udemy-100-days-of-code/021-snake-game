@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-006 (Go) | pending |
+| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-006 (Go) | [f13d004] |
 
 ---
 
@@ -105,3 +105,4 @@ The lecture points are the specification of this milestone:
 [BC-001]: ../business-case.md
 [PP-001]: ../project-plan.md
 [MIL-002]: ./mil-002-adopt-the-game.md
+[f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c

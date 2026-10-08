@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-003 (Go) | pending |
+| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-003 (Go) | [f13d004] |
 
 ---
 
@@ -63,3 +63,4 @@ Maps each Product Owner (PO) term to its professional information technology (IT
 
 [BC-001]: ./business-case.md
 [SA-001]: ./stakeholder-analysis.md
+[f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c

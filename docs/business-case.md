@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-001 (Go) | pending |
+| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-001 (Go) | [f13d004] |
 
 ---
 
@@ -183,3 +183,4 @@ Proceed — the work left is small (adopt a finished and tested base, check it a
 [MIL-002]: ./milestones/mil-002-adopt-the-game.md
 [MIL-003]: ./milestones/mil-003-check-against-day-21.md
 [020-snake-game]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game
+[f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c

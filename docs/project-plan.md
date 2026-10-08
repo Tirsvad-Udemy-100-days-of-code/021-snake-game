@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, accepted by the Product Owner in chat (no QC checklist exists for the plan) | pending |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Sync applied: milestone links and issue numbers; description and topics set; open issues closed on S01's instruction in chat | pending |
+| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, accepted by the Product Owner in chat (no QC checklist exists for the plan) | [f13d004] |
+| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Sync applied: milestone links and issue numbers; description and topics set; open issues closed on S01's instruction in chat | [f13d004] |
 
 ---
 
@@ -118,3 +118,4 @@ A No-Go on a gateway returns it to S01 for rework and moves every later date by 
 [milestone-88]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/milestone/88
 [milestone-89]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/milestone/89
 [milestone-90]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/milestone/90
+[f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c
