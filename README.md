@@ -95,11 +95,6 @@ It opens a black 600 by 600 window titled "My Snake Game". The snake of three
 squares starts in the middle and moves to the right by itself, 20 pixels every
 0.1 seconds. Its body is light green and its head is dark green with a mouth, a
 black wedge in the middle of the front edge, that turns with the head.
-
-![The game window at a score of 5, with the light green snake, its dark green head with a mouth and the blue food](docs/images/snake-score-5.png)
-
-*The game window at a score of 5.*
-
 | Key | Effect |
 | --- | --- |
 | Up, Down, Left, Right | Turn the snake |
