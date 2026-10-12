@@ -6,6 +6,7 @@ from fakes import (
     FakeFood,
     FakeScoreboard,
     FakeScreen,
+    FakeShape,
     FakeTclError,
     FakeTerminatorError,
     imports_turtle_or_tkinter,
@@ -14,6 +15,7 @@ from fakes import (
     script_randint,
 )
 from snake_game import constants
+from snake_game import snake as snake_module
 from snake_game.main import (
     bind_keys,
     configure_screen,
@@ -21,7 +23,9 @@ from snake_game.main import (
     end_game_if_over,
     main,
     play_frame,
+    register_head_shape,
 )
+from snake_game.snake import Snake
 
 ARROW_KEYS = ("Up", "Down", "Left", "Right")
 
@@ -111,11 +115,12 @@ def test_main_sets_up_the_screen_turns_off_drawing_and_binds_the_keys(
     main()
 
     assert len(screens) == 1
-    assert screens[0].call_names()[:9] == [
+    assert screens[0].call_names()[:10] == [
         "setup",
         "bgcolor",
         "title",
         "tracer",
+        "register_shape",
         "listen",
         "onkey",
         "onkey",
@@ -124,6 +129,48 @@ def test_main_sets_up_the_screen_turns_off_drawing_and_binds_the_keys(
     ]
     assert ("tracer", (0,)) in screens[0].calls
     assert sorted(screens[0].bindings) == sorted(ARROW_KEYS)
+
+
+def test_register_head_shape_builds_two_components_from_the_constants(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    install_fake_turtle(monkeypatch)
+    screen = FakeScreen()
+
+    register_head_shape(screen)  # the fake `Shape` is installed above
+
+    ((_, (shape_name, shape)),) = [
+        call for call in screen.calls if call[0] == "register_shape"
+    ]
+    assert isinstance(shape, FakeShape)
+    assert shape_name == constants.HEAD_SHAPE
+    assert shape.type == "compound"
+    assert shape.components == [
+        (constants.HEAD_OUTLINE, constants.HEAD_COLOR, None),
+        (constants.MOUTH_OUTLINE, constants.MOUTH_COLOR, None),
+    ]
+
+
+def test_main_registers_the_head_shape_once_before_the_snake_is_made(
+    monkeypatch: pytest.MonkeyPatch, sleeps: list[float]
+) -> None:
+    turtles, screens = install_fake_turtle(monkeypatch)
+    registered_when_snake_made: list[bool] = []
+    real_snake = snake_module.Snake
+
+    def spying_snake() -> Snake:
+        registered_when_snake_made.append("register_shape" in screens[0].call_names())
+        return real_snake()
+
+    monkeypatch.setattr("snake_game.main.Snake", spying_snake)
+
+    main()
+
+    registrations = [c for c in screens[0].calls if c[0] == "register_shape"]
+    assert len(registrations) == 1
+    assert registrations[0][1][0] == constants.HEAD_SHAPE
+    assert registered_when_snake_made == [True]
+    assert ("shape", (constants.HEAD_SHAPE,)) in turtles[0].calls
 
 
 def test_main_draws_the_snake_before_the_first_frame(

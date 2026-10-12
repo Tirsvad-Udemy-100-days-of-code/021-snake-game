@@ -15,9 +15,45 @@ def test_screen_is_black_and_titled_as_in_the_lecture() -> None:
     assert constants.SCREEN_TITLE == "My Snake Game"
 
 
-def test_segments_are_white_squares() -> None:
+def test_body_segments_are_light_green_squares() -> None:
     assert constants.SEGMENT_SHAPE == "square"
-    assert constants.SEGMENT_COLOR == "white"
+    assert constants.BODY_COLOR == "light green"
+
+
+def test_segment_color_no_longer_exists() -> None:
+    assert not hasattr(constants, "SEGMENT_COLOR")
+
+
+def test_head_is_dark_green_and_differs_from_the_body() -> None:
+    assert constants.HEAD_COLOR == "dark green"
+    assert constants.HEAD_COLOR != constants.BODY_COLOR
+
+
+def test_head_shape_has_a_name_that_is_not_a_built_in_shape() -> None:
+    assert constants.HEAD_SHAPE == "snake_head"
+    assert constants.HEAD_SHAPE != constants.SEGMENT_SHAPE
+
+
+def test_head_is_the_20_by_20_square() -> None:
+    assert constants.HEAD_OUTLINE == ((-10, -10), (-10, 10), (10, 10), (10, -10))
+    xs = {x for x, _ in constants.HEAD_OUTLINE}
+    ys = {y for _, y in constants.HEAD_OUTLINE}
+    assert max(xs) - min(xs) == max(ys) - min(ys) == 20
+
+
+def test_mouth_lies_on_the_front_edge_and_inside_the_head() -> None:
+    front = max(y for _, y in constants.HEAD_OUTLINE)
+    half = max(x for x, _ in constants.HEAD_OUTLINE)
+
+    assert constants.MOUTH_OUTLINE == ((-6, 10), (0, 2), (6, 10))
+    assert any(y == front for _, y in constants.MOUTH_OUTLINE)
+    assert all(
+        abs(x) <= half and -half <= y <= front for x, y in constants.MOUTH_OUTLINE
+    )
+
+
+def test_mouth_is_the_colour_of_the_background() -> None:
+    assert constants.MOUTH_COLOR == constants.SCREEN_BACKGROUND_COLOR
 
 
 def test_snake_starts_with_three_segments_at_the_lecture_positions() -> None:

@@ -107,6 +107,17 @@ class FakeSegment:
         return [name for name, _ in self.calls]
 
 
+class FakeShape:
+    """Stands in for `turtle.Shape`: it records its type and its components."""
+
+    def __init__(self, type_: str, data: object = None) -> None:
+        self.type = type_
+        self.components: list[tuple[object, object, object]] = []
+
+    def addcomponent(self, poly: object, fill: object, outline: object = None) -> None:
+        self.components.append((poly, fill, outline))
+
+
 class FakeFood:
     """A food that counts how often it was moved."""
 
@@ -161,6 +172,9 @@ class FakeScreen:
 
     def title(self, titlestring: str, /) -> None:
         self.calls.append(("title", (titlestring,)))
+
+    def register_shape(self, name: str, shape: object, /) -> None:
+        self.calls.append(("register_shape", (name, shape)))
 
     def tracer(self, n: int, /) -> None:
         self.calls.append(("tracer", (n,)))
@@ -229,6 +243,7 @@ def install_fake_turtle(
     turtle_module = types.ModuleType("turtle")
     turtle_module.__dict__["Turtle"] = RegisteredSegment
     turtle_module.__dict__["Screen"] = make_screen
+    turtle_module.__dict__["Shape"] = FakeShape
     turtle_module.__dict__["Terminator"] = FakeTerminatorError
     tkinter_module = types.ModuleType("tkinter")
     tkinter_module.__dict__["TclError"] = FakeTclError

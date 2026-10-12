@@ -53,12 +53,21 @@ def test_segments_are_the_created_turtles_in_order() -> None:
     assert snake.segments == created
 
 
-def test_segments_are_white_squares() -> None:
+def test_head_has_the_head_shape_and_no_colour_call() -> None:
     _, created = make_snake()
 
-    for segment in created:
-        assert ("shape", ("square",)) in segment.calls
-        assert ("color", ("white",)) in segment.calls
+    head = created[0]
+    assert ("shape", (constants.HEAD_SHAPE,)) in head.calls
+    assert "color" not in head.call_names()
+
+
+def test_body_segments_are_light_green_squares() -> None:
+    _, created = make_snake()
+
+    assert len(created) > 1
+    for segment in created[1:]:
+        assert ("shape", (constants.SEGMENT_SHAPE,)) in segment.calls
+        assert ("color", (constants.BODY_COLOR,)) in segment.calls
 
 
 def test_segments_are_placed_at_the_starting_positions_head_first() -> None:
@@ -223,15 +232,17 @@ def test_a_turn_is_accepted_after_the_move_that_followed_the_first_turn() -> Non
     assert snake.head.heading() == constants.LEFT
 
 
-def test_add_segment_puts_a_white_square_with_the_pen_up_at_the_position() -> None:
+def test_add_segment_puts_a_light_green_square_with_the_pen_up_at_the_position() -> (
+    None
+):
     snake, created = make_snake()
 
     snake.add_segment((100, -60))
 
     new = created[-1]
     assert snake.segments[-1] is new
-    assert ("shape", ("square",)) in new.calls
-    assert ("color", ("white",)) in new.calls
+    assert ("shape", (constants.SEGMENT_SHAPE,)) in new.calls
+    assert ("color", (constants.BODY_COLOR,)) in new.calls
     assert new.call_names().index("penup") < new.call_names().index("goto")
     assert new.position() == (100, -60)
 
@@ -244,6 +255,18 @@ def test_extend_adds_one_segment_where_the_last_segment_is() -> None:
 
     assert len(snake.segments) == len(constants.STARTING_POSITIONS) + 1
     assert snake.segments[-1].position() == last_place
+
+
+def test_extend_adds_a_light_green_square_and_not_a_head() -> None:
+    snake, _ = make_snake()
+
+    snake.extend()
+
+    new = snake.segments[-1]
+    assert isinstance(new, FakeSegment)
+    assert ("shape", (constants.SEGMENT_SHAPE,)) in new.calls
+    assert ("color", (constants.BODY_COLOR,)) in new.calls
+    assert ("shape", (constants.HEAD_SHAPE,)) not in new.calls
 
 
 def test_extend_twice_adds_two_segments() -> None:
