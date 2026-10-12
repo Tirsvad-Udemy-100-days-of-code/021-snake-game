@@ -54,7 +54,7 @@ Go — all Mandatory criteria pass; criterion 7 is N-A because no module opens a
 ---
 
 [MIL-002]: ../../milestones/mil-002-adopt-the-game.md
-[QC-PY-001]: ../../../framework/qc/qc-programming-python.md
+[QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
 [BC-001]: ../../business-case.md
 [PP-001]: ../../project-plan.md
 [020-snake-game]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game

@@ -63,8 +63,8 @@ Go — all Mandatory criteria pass. The checklist rows above were transcribed an
 ---
 
 [BC-001]: ../../business-case.md
-[QC-BC-001]: ../../../framework/qc/qc-business-case.md
-[QC-LANG-001]: ../../../framework/qc/qc-language-domain.md
+[QC-BC-001]: ../../../framework/qc/artifacts/qc-business-case.md
+[QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
 [DICT-001]: ../../dictionary.md
 [PP-001]: ../../project-plan.md
 [SA-001]: ../../stakeholder-analysis.md
