@@ -16,7 +16,7 @@ document of a type. `Primary File` may contain a glob (e.g.
 | PP | Project Plan | docs/project-plan.md | 002 |
 | MIL | Milestone / Gateway | docs/milestones/*.md | 005 |
 | DICT | Domain Dictionary | docs/dictionary.md | 002 |
-| RC | SQA Review Record | docs/sqa/reviews/rc-*.md | 013 |
+| RC | SQA Review Record | docs/sqa/reviews/rc-*.md | 014 |
 
 ## Languages
 
