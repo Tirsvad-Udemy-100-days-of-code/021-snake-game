@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-13 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-13 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [b53be04] |
 
 ---
 
@@ -66,3 +66,4 @@ Go — all Mandatory criteria pass or are not applicable. The rows above were as
 [QC-DICT-001]: ../../../framework/qc/artifacts/qc-dictionary.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
 [RC-003]: ./rc-003-dictionary.md
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

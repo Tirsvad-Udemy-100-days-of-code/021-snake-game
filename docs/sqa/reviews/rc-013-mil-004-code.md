@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-13 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-13 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [7d5bc3e] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — all Mandatory criteria pass; criterion 7 is N-A. Commands run on 2026-10-
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
 [BC-001]: ../../business-case.md
 [PP-001]: ../../project-plan.md
+[7d5bc3e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/7d5bc3e2bc6f9e2e515b1aa3212a2d9f240f48f2

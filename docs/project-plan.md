@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Closed the GitHub copy open issue: the copy already shows the description and topics, which this project did not set; closed on S01's instruction in chat | [012b839] |
-| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added MIL-004 (the look of the snake and a screenshot): its schedule, scope coverage, dependency, two risks and four open issues (look, screenshot and wiki, mode, framework update and CI workflow) | pending |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added MIL-004 (the look of the snake and a screenshot): its schedule, scope coverage, dependency, two risks and four open issues (look, screenshot and wiki, mode, framework update and CI workflow) | [b53be04] |
 
 ---
 
@@ -131,3 +131,4 @@ A No-Go on a gateway returns it to S01 for rework and moves every later date by 
 [milestone-89]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/milestone/89
 [milestone-90]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/milestone/90
 [012b839]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/012b83987c3c48191fc91815639a39d7ccf91a0b
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

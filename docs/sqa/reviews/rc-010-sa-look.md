@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-13 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-13 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [b53be04] |
 
 ---
 
@@ -70,3 +70,4 @@ Go — all Mandatory criteria pass or are not applicable. The rows above were as
 [BC-001]: ../../business-case.md
 [MIL-004]: ../../milestones/mil-004-snake-look-and-screenshot.md
 [DICT-001]: ../../dictionary.md
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

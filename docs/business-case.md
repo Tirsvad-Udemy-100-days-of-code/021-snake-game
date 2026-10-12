@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-001 (Go) | [f13d004] |
-| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objectives 11 (the look of the snake) and 12 (a real screenshot in the README and on the wiki), scope, success criteria 13 and 14, three risks, two assumptions, the autonomous-mode note in the constraints and the costs | pending |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objectives 11 (the look of the snake) and 12 (a real screenshot in the README and on the wiki), scope, success criteria 13 and 14, three risks, two assumptions, the autonomous-mode note in the constraints and the costs | [b53be04] |
 
 ---
 
@@ -200,3 +200,4 @@ Proceed — the work left is small (adopt a finished and tested base, check it a
 [MIL-004]: ./milestones/mil-004-snake-look-and-screenshot.md
 [020-snake-game]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game
 [f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

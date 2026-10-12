@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-002 (Go) | [f13d004] |
-| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added S01's concern for the look of the snake (objective 11) and S03's concern for a screenshot on the README and the wiki (objective 12), with the wiki as a communication channel | pending |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added S01's concern for the look of the snake (objective 11) and S03's concern for a screenshot on the README and the wiki (objective 12), with the wiki as a communication channel | [b53be04] |
 
 ---
 
@@ -101,3 +101,4 @@ FURPS+ stands for Functionality, Usability, Reliability, Performance, Supportabi
 [MIL-003]: ./milestones/mil-003-check-against-day-21.md
 [MIL-004]: ./milestones/mil-004-snake-look-and-screenshot.md
 [f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

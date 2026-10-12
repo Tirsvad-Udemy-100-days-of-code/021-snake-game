@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
-| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | The wiki is published in three languages (English, Danish, Bahasa Melayu) after S01's request in chat; Deliverable, Go/No-Go criterion 12 and task 9 changed | pending |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [7d5bc3e] |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | The wiki is published in three languages (English, Danish, Bahasa Melayu) after S01's request in chat; Deliverable, Go/No-Go criterion 12 and task 9 changed | [7d5bc3e] |
 
 ---
 
@@ -117,3 +117,4 @@ The screenshot has these properties:
 [MIL-001]: ./mil-001-project-foundation.md
 [MIL-002]: ./mil-002-adopt-the-game.md
 [MIL-003]: ./mil-003-check-against-day-21.md
+[7d5bc3e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/7d5bc3e2bc6f9e2e515b1aa3212a2d9f240f48f2
