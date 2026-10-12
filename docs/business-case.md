@@ -11,7 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-001 (Go) | [f13d004] |
+| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-001 (Go) | [f13d004] |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objectives 11 (the look of the snake) and 12 (a real screenshot in the README and on the wiki), scope, success criteria 13 and 14, three risks, two assumptions, the autonomous-mode note in the constraints and the costs | pending |
 
 ---
 
@@ -19,7 +20,7 @@
 
 Snake Game (Day 21) is the day-21 assignment of Udemy's *100 Days of Code: The Complete Python Pro Bootcamp*: the classic Snake game, built in an object-oriented way with Python's `turtle` module. Day 21 teaches class inheritance and slicing and applies them to the game in five lectures: inheritance and slicing, detecting collisions with the food, the scoreboard, the wall, and the tail.
 
-This repository continues the day-20 repository [020-snake-game], whose `main` already holds the finished game (food, score and game over included) with its tests, source documentation and review records. On 2026-10-08 S01 decided, in chat, to start this repository from that finished `main` and not to rebuild the game. The project therefore adopts the day-20 base, gives it the identity of this repository (name, links, description, README), and checks every behaviour against the day-21 lecture summaries, whose numbers the day-20 repository had to assume. The work is planned in three milestones, each delivered by one branch and one pull request. The game has no runtime dependencies.
+This repository continues the day-20 repository [020-snake-game], whose `main` already holds the finished game (food, score and game over included) with its tests, source documentation and review records. On 2026-10-08 S01 decided, in chat, to start this repository from that finished `main` and not to rebuild the game. The project therefore adopts the day-20 base, gives it the identity of this repository (name, links, description, README), and checks every behaviour against the day-21 lecture summaries, whose numbers the day-20 repository had to assume. The work is planned in four milestones, each delivered by one branch and one pull request: three for adopting, checking and finishing the game, and a fourth, added on 2026-10-13, for two things that S01 asked for after the lectures: a light green body and a dark green head with a mouth, and a real screenshot of the game in the README and on the wiki. The game has no runtime dependencies.
 
 ## Methodological and Standards Foundation
 
@@ -31,7 +32,7 @@ This repository continues the day-20 repository [020-snake-game], whose `main` a
 - **Quality model:** ISO/IEC 25010:2023; every QC criterion is tagged with a
   characteristic of it.
 - **Code:** Python Enhancement Proposals (PEP) 8, 257 and 484, reviewed against `QC-PY-001`; comments in Doxygen style; tests with pytest.
-- **Domain terms:** the lectures' own terms and names are used and recorded in the Domain Dictionary [DICT-001] (screen, snake, segment, head, body, tail, move, direction, reversal, food, refresh, eat, grow, score, scoreboard, wall, touch, game over, inheritance, and the names `create_snake`, `up`, `down`, `left`, `right`, `game_is_on`, `Food`, `Scoreboard`).
+- **Domain terms:** the lectures' own terms and names are used and recorded in the Domain Dictionary [DICT-001] (screen, snake, segment, head, mouth, body, tail, move, direction, reversal, food, refresh, eat, grow, score, scoreboard, wall, touch, game over, inheritance, and the names `create_snake`, `up`, `down`, `left`, `right`, `game_is_on`, `Food`, `Scoreboard`).
 
 ## Problem Statement
 
@@ -40,6 +41,7 @@ This repository continues the day-20 repository [020-snake-game], whose `main` a
 - A turtle program opens a window, so it is normally not tested, and mistakes in the rules (a snake that grows at the wrong place, a touch that is never detected) are found only by watching.
 - The numbers of day 21 (size of the food, the distances of the two collisions, the wall) were assumptions in the day-20 repository, because it had only an outline of day 21. They have not yet been compared with the lecture summaries.
 - A repository without description, topics or README is hard to find and hard to judge for the people who browse for ideas.
+- A game that is only described in words does not show what it looks like; a visitor judges it by a screenshot, and the lectures' white squares on black are not what S01 wants it to look like.
 
 ## Business Opportunity
 
@@ -59,6 +61,8 @@ A single finished, reproducible repository shows the whole path from lecture to 
 | 8 | Document the project: Doxygen comments in the source with a `Doxyfile`, and a README with set-up instructions for Windows PowerShell, Linux Debian and macOS |
 | 9 | Keep every step traceable: one branch and one pull request per milestone, each pull request closing the issues it completes |
 | 10 | Publish the repository with a description and topics |
+| 11 | Give the snake the look that S01 asked for on 2026-10-13: a light green body and a dark green head with a mouth at its front, which turns with the head. This is a deliberate change from the white squares of the lectures |
+| 12 | Show the game in a screenshot: a real capture of the running game at a score of 5, kept in the repository, shown in the README and on the wiki of the repository |
 
 ## Scope
 
@@ -67,15 +71,18 @@ A single finished, reproducible repository shows the whole path from lecture to 
 - Adopting the finished game of [020-snake-game] (source, tests, configuration, continuous integration workflow) as the base of this repository, and recording every difference from it.
 - The five lectures of day 21: inheritance and slicing, detecting collisions with the food, the scoreboard, the wall, and the tail, as far as the lecture summaries give them.
 - Checking each rule of the game against the lecture summaries, and correcting the base where it differs.
+- The look of the snake that S01 asked for after the lectures: a light green body and a dark green head with a mouth that points the way the head points.
+- A screenshot of the running game at a score of 5, kept in `docs/images/`, shown in the README and on the wiki of the repository.
 - Constants in `constants.py`; source in `src/`, tests in `tests/`, documents in `docs/`.
 - `pyproject.toml`, Python `.gitignore`, `Doxyfile`, `README.md` following the Product Owner's template, a continuous integration (CI) workflow.
 - Repository description and topics on the git host.
 
 ### Out of Scope
 
-- Anything the lectures do not cover: sound, a menu, high-score storage between games (no lecture of day 21 stores one), restarting after game over, levels, configurable speed or window size.
+- Anything the lectures do not cover: sound, a menu, high-score storage between games (no lecture of day 21 stores one), restarting after game over, levels, configurable speed or window size, and animating the mouth (it does not open or close).
 - Rebuilding the game from the day-20 state; the finished base is used as it is.
 - Keeping this repository and [020-snake-game] in step after today: a later fix in one of them is not carried to the other.
+- A tool in the repository that takes the screenshot: the screenshot is taken once with a one-off script outside the repository.
 - Packaging for or publishing to the Python Package Index (PyPI).
 - Runtime dependencies of any kind.
 - Using or testing the tokens in `.env`; the file is for personal use only and is never imported by the project.
@@ -89,6 +96,7 @@ A single finished, reproducible repository shows the whole path from lecture to 
 - Generated source documentation.
 - A repository page with description, topics and README.
 - A written comparison of the game with the day-21 lectures, which the day-20 repository does not have.
+- A screenshot of the running game in the README and on the wiki, so that a visitor sees what it looks like before cloning it.
 
 ### Intangible Benefits
 
@@ -113,9 +121,11 @@ The project supports the participant's goal of finishing the bootcamp with repos
 | 7 | Source documentation builds | `doxygen Doxyfile` ends with 0 warnings | Doxygen output |
 | 8 | No runtime dependencies | 0 entries in `[project].dependencies` | `pyproject.toml` |
 | 9 | Names follow the assignment | 100% of the names listed in objective 5 exist with that spelling | Review of `src/` against objective 5 |
-| 10 | Steps are traceable | 3 of 3 milestones merged by pull request, each description with one `Closes #N` line per completed issue | Pull request list and issue states |
+| 10 | Steps are traceable | 4 of 4 milestones merged by pull request, each description with one `Closes #N` line per completed issue | Pull request list and issue states |
 | 11 | The repository page is complete | Non-empty description and at least 5 topics | Git host |
 | 12 | The base is adopted without hidden change | Every difference between the adopted files and [020-snake-game] is listed in the pull request that introduces it | Pull request descriptions |
+| 13 | The snake looks as asked | The segments behind the head are light green; the head is dark green with a mouth at its front that turns with the head; a segment gained by eating is light green; the food stays blue and the text white | Manual run by S01 against the Go/No-Go list of [MIL-004], plus the matching tests |
+| 14 | The game is shown in a real screenshot | `docs/images/snake-score-5.png` is a capture of the window of the running game while its scoreboard reads `Score: 5`; the README and the wiki page `Home` show it | The file, the README and the wiki, checked against the Go/No-Go list of [MIL-004] |
 
 ## Risks
 
@@ -133,6 +143,9 @@ The project supports the participant's goal of finishing the bootcamp with repos
 | The random place of the food makes a test unreliable, or puts the food under the snake | A test fails now and then, or the game looks wrong | The random place comes from one function that the tests replace; whether the food may appear under the snake is an open issue of [PP-001] |
 | The adopted files drift away from [020-snake-game] | A fix made in one repository is missing in the other | Out of scope by decision; each pull request lists the differences from the base |
 | Tokens in `.env` leak into the repository | Credentials exposed | `.env` is in `.gitignore`, is never imported, and is not part of any task |
+| A head with a mouth needs a compound `turtle` shape (`turtle.Shape`) whose colours are fixed inside it, and `Snake` has so far been free of `turtle` at import time | The head colour cannot be set with `color()` like the body, and a test could need a display | The head shape is built from constants in one function that `main` calls once, `turtle` is imported there only, and the tests install a fake `turtle` module with `Shape` |
+| The screenshot goes out of date when the look changes | The README and the wiki show a look that the game no longer has | The screenshot is taken after the look is built and is part of the same pull request; the wiki refers to the file on `main`, so a new screenshot replaces it in both places |
+| The screenshot is a capture of a real window, which needs a display and the operating system's window capture | It cannot be repeated in CI or on another machine | It is taken once on S01's machine and committed as a file; the pull request says how it was taken and that the food was moved to reach the score quickly; a capture tool is out of scope |
 
 ## Assumptions
 
@@ -141,6 +154,8 @@ The project supports the participant's goal of finishing the bootcamp with repos
 - The git host is the Tirsvad Gitea instance, and its issues and milestones are used for tracking.
 - The day-21 lecture summaries in the request are the specification of day 21; the video is the tie-breaker when a detail is missing.
 - The finished `main` of [020-snake-game] is correct as far as its own tests and review records show, and is the base for every file that the milestones adopt.
+- The look of the snake was asked for in one line ("body light green, head dark green, head with mouth"): the exact greens and the shape of the mouth are assumed until S01 confirms them by accepting the plan (see [MIL-004]).
+- The wiki of the repository is enabled and has no page yet; its first page is created with the git host's API.
 
 ## Constraints
 
@@ -149,7 +164,7 @@ The project supports the participant's goal of finishing the bootcamp with repos
 - Folder structure `src/`, `tests/`, `docs/`.
 - No runtime dependencies unless needed.
 - Plan window from 2026-10-08 to 2026-10-16 (proposed, see [PP-001]), about one week of S01's spare time.
-- Nothing is committed, pushed or merged without the Product Owner's request; changes are reviewed in the working tree first.
+- Nothing is committed, pushed or merged without the Product Owner's request; changes are reviewed in the working tree first. S01 switched on autonomous mode in chat on 2026-10-13: for the work of one plan, S01's acceptance of that plan is the request, and the assistant's reviews are then not independent (see `AGENTS.md`, Modes).
 - The plan gate holds: no file under `src/` or `tests/` before an accepted, reviewed milestone that lists the task.
 
 ## Cost–Benefit Assessment
@@ -158,7 +173,7 @@ The assessment is qualitative on purpose: this is an unpaid learning project wit
 
 | Costs | Benefits |
 | --- | --- |
-| About one week of S01's spare time, including reviews | A finished and shareable repository (objectives 1 to 10) |
+| About one week of S01's spare time, including reviews, and two more days for the look and the screenshot, inside the plan window | A finished and shareable repository (objectives 1 to 12) |
 | Review effort for the planning documents, which is large compared with the work left on the game | A traceable, repeatable way of working that later days can reuse |
 | Two repositories that hold the same code and can drift apart | No rebuild of a game that already exists and is tested |
 | Doxygen and pytest as development tools (not runtime) | Source documentation and automatic checks |
@@ -167,13 +182,13 @@ The assessment is qualitative on purpose: this is an unpaid learning project wit
 
 | Stakeholder ID (SA) | Interest in this project |
 | --- | --- |
-| S01 | Wants a correct, tested and documented solution of the assignment: objectives 1 to 10 |
+| S01 | Wants a correct, tested and documented solution of the assignment: objectives 1 to 12 |
 | S02 | Needs readable, runnable code with the assignment's names and README instructions (objectives 2, 3, 5, 6 and 8) |
-| S03 | Needs a clear repository page and nothing to install (objectives 6, 8 and 10) |
+| S03 | Needs a clear repository page and nothing to install (objectives 6, 8, 10 and 12) |
 
 ## Recommendation
 
-Proceed — the work left is small (adopt a finished and tested base, check it against the day-21 lectures, and publish it), the cost is about one week of the Product Owner's time, and the result is a reusable, documented repository.
+Proceed — the work left is small (adopt a finished and tested base, check it against the day-21 lectures, publish it, then change the look of the snake and show the game in a screenshot), the cost is about one week and two days of the Product Owner's time, and the result is a reusable, documented repository.
 
 ---
 
@@ -182,5 +197,6 @@ Proceed — the work left is small (adopt a finished and tested base, check it a
 [PP-001]: ./project-plan.md
 [MIL-002]: ./milestones/mil-002-adopt-the-game.md
 [MIL-003]: ./milestones/mil-003-check-against-day-21.md
+[MIL-004]: ./milestones/mil-004-snake-look-and-screenshot.md
 [020-snake-game]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game
 [f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c
