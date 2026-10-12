@@ -1,5 +1,5 @@
 """! @file
-@brief The snake: a list of square segments that the game draws and moves.
+@brief The snake: a list of segments that the game draws and moves.
 
 The class follows the lectures "Create a Snake Class & Move to OOP", "Animating
 the Snake Segments on Screen" and "Controlling the Snake with Keypresses", and
@@ -14,11 +14,12 @@ from collections.abc import Callable
 from typing import Protocol
 
 from snake_game.constants import (
+    BODY_COLOR,
     DOWN,
+    HEAD_SHAPE,
     LEFT,
     MOVE_DISTANCE,
     RIGHT,
-    SEGMENT_COLOR,
     SEGMENT_SHAPE,
     STARTING_POSITIONS,
     TAIL_COLLISION_DISTANCE,
@@ -44,7 +45,7 @@ class Segment(Protocol):
     def color(self, color: str, /) -> object:
         """! @brief Set the colour of the segment.
 
-        @param color Name of the colour, for example `white`.
+        @param color Name of the colour, for example `light green`.
         @return Whatever the implementation returns; the snake ignores it.
         """
         ...
@@ -126,7 +127,7 @@ def make_turtle_segment() -> Segment:
 
 
 class Snake:
-    """! @brief The snake of the game, drawn as a row of square segments.
+    """! @brief The snake of the game: a dark green head and a light green body.
 
     The snake cannot reverse onto itself. Like the lecture, a turn is refused when
     it points opposite to the way the snake is going. Unlike the lecture, "the way
@@ -151,15 +152,20 @@ class Snake:
         self._direction_of_travel: float = self.head.heading()
 
     def create_snake(self) -> None:
-        """! @brief Draw one white square segment at each starting position.
+        """! @brief Draw one segment at each starting position.
 
-        The segments are kept in `segments`, the head first.
+        The first one is the head, with the shape `HEAD_SHAPE`; the others are light
+        green squares. The segments are kept in `segments`, the head first.
         """
         for position in STARTING_POSITIONS:
             self.add_segment(position)
 
     def add_segment(self, position: tuple[float, float]) -> None:
-        """! @brief Add a white square segment at the end of the snake.
+        """! @brief Add a segment at the end of the snake.
+
+        The first segment of an empty snake is the head: it gets the shape
+        `HEAD_SHAPE`, whose colours are part of the shape. Every other segment is a
+        square in `BODY_COLOR`.
 
         The pen is lifted before the segment is sent to its position, so no line is
         drawn.
@@ -167,8 +173,11 @@ class Snake:
         @param position The x and y coordinates of the new segment.
         """
         new_segment = self._segment_factory()
-        new_segment.shape(SEGMENT_SHAPE)
-        new_segment.color(SEGMENT_COLOR)
+        if self.segments:
+            new_segment.shape(SEGMENT_SHAPE)
+            new_segment.color(BODY_COLOR)
+        else:
+            new_segment.shape(HEAD_SHAPE)
         new_segment.penup()
         new_segment.goto(*position)
         self.segments.append(new_segment)

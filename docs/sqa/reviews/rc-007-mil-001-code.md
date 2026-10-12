@@ -52,7 +52,7 @@ Go — all Mandatory criteria pass or are N-A with a reason (criteria 5, 7 and 1
 ---
 
 [MIL-001]: ../../milestones/mil-001-project-foundation.md
-[QC-PY-001]: ../../../framework/qc/qc-programming-python.md
+[QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
 [BC-001]: ../../business-case.md
 [PP-001]: ../../project-plan.md
 [020-snake-game]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/020-snake-game

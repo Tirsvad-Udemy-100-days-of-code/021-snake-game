@@ -11,7 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-002 (Go) | [f13d004] |
+| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-002 (Go) | [f13d004] |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added S01's concern for the look of the snake (objective 11) and S03's concern for a screenshot on the README and the wiki (objective 12), with the wiki as a communication channel | [b53be04] |
 
 ---
 
@@ -43,11 +44,13 @@ FURPS+ stands for Functionality, Usability, Reliability, Performance, Supportabi
 | --- | --- | --- |
 | S01 | The game behaves as the day-21 lectures describe: the snake eats the food and grows, the score rises, and the game ends at the wall or at its own tail | Functionality |
 | S01 | The day-20 behaviour is kept: a three-segment snake that moves by itself and turns with the arrow keys, without a reversal | Functionality |
+| S01 | The snake looks as S01 asked on 2026-10-13: a light green body and a dark green head with a mouth at its front | Usability |
 | S01 | Behaviour is proven by tests that run without a display | Reliability |
 | S01 | Every step is a branch and a pull request, reviewed before the next | Supportability |
 | S02 | The code is readable and keeps the assignment's names (`Food`, `Scoreboard`, `Snake`, `refresh`, `extend`, `add_segment`, `increase_score`, `update_scoreboard`, `game_over`, `create_snake`, `up`, `down`, `left`, `right`, `segments`, `head`, `game_is_on`) | Usability |
 | S02 | The README tells how to create the `.venv`, run the game and run the tests on their operating system | Usability |
 | S03 | The repository page says what the project is, with description, topics and README | Usability |
+| S03 | The README and the wiki show what the game looks like, in a real screenshot of the running game | Usability |
 | S03 | Nothing must be installed to run the game apart from Python itself | Implementation (constraint) |
 
 ## Communication Requirements
@@ -57,6 +60,7 @@ FURPS+ stands for Functionality, Usability, Reliability, Performance, Supportabi
 | S01 | Pull request review in the git host | Once per milestone | Pull request with `Closes #N` lines and the review record | Every milestone ([PP-001]) |
 | S02 | README in the repository | Once, updated when the game changes | Set-up, run and test instructions per operating system | [MIL-001], completed in [MIL-003] |
 | S03 | Repository description, topics and README | Once, updated when the game changes | Description, topics and README overview | [MIL-001], checked in [MIL-003] |
+| S03 | Wiki of the repository | Once, updated when the look changes | One page `Home` with a short description of the game and the screenshot | [MIL-004] |
 
 ## Conflicting Interests and Mitigations
 
@@ -74,11 +78,13 @@ FURPS+ stands for Functionality, Usability, Reliability, Performance, Supportabi
 | --- | --- | --- |
 | S01 | Game behaves as the day-21 lectures describe | [BC-001] objectives 2, 3 and 4 |
 | S01 | Day-20 behaviour is kept | [BC-001] objective 1 |
+| S01 | The snake has a light green body and a dark green head with a mouth | [BC-001] objective 11 |
 | S01 | Tests run without a display | [BC-001] objective 7 |
 | S01 | Every step is a branch and a pull request | [BC-001] objective 9 |
 | S02 | Readable code with the assignment's names | [BC-001] objective 5 |
 | S02 | README with run and test instructions | [BC-001] objectives 6 and 8 |
 | S03 | Description, topics and README on the repository page | [BC-001] objective 10 |
+| S03 | A real screenshot of the game in the README and on the wiki | [BC-001] objective 12 |
 | S03 | No runtime dependencies | [BC-001] objective 6 |
 
 ## Sign-Off
@@ -93,4 +99,6 @@ FURPS+ stands for Functionality, Usability, Reliability, Performance, Supportabi
 [PP-001]: ./project-plan.md
 [MIL-001]: ./milestones/mil-001-project-foundation.md
 [MIL-003]: ./milestones/mil-003-check-against-day-21.md
+[MIL-004]: ./milestones/mil-004-snake-look-and-screenshot.md
 [f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

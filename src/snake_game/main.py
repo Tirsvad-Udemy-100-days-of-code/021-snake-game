@@ -9,10 +9,15 @@ the game ends.
 
 import time
 from collections.abc import Callable
-from typing import Protocol
+from typing import TYPE_CHECKING, Protocol
 
 from snake_game.constants import (
     FOOD_COLLISION_DISTANCE,
+    HEAD_COLOR,
+    HEAD_OUTLINE,
+    HEAD_SHAPE,
+    MOUTH_COLOR,
+    MOUTH_OUTLINE,
     REFRESH_DELAY_SECONDS,
     SCREEN_BACKGROUND_COLOR,
     SCREEN_HEIGHT,
@@ -20,6 +25,9 @@ from snake_game.constants import (
     SCREEN_WIDTH,
 )
 from snake_game.snake import Snake
+
+if TYPE_CHECKING:  # for the annotation only: nothing is imported when running
+    from turtle import Shape
 
 
 class ScreenLike(Protocol):
@@ -47,6 +55,14 @@ class ScreenLike(Protocol):
         """! @brief Set the title of the window.
 
         @param titlestring The title.
+        """
+        ...
+
+    def register_shape(self, name: str, shape: "Shape", /) -> None:
+        """! @brief Make a shape known under a name, so that a turtle can use it.
+
+        @param name The name of the shape.
+        @param shape The shape to register.
         """
         ...
 
@@ -108,6 +124,27 @@ def configure_screen(screen: ScreenLike) -> None:
     screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
     screen.bgcolor(SCREEN_BACKGROUND_COLOR)
     screen.title(SCREEN_TITLE)
+
+
+def register_head_shape(screen: ScreenLike) -> None:
+    """! @brief Build the shape of the head and register it as `HEAD_SHAPE`.
+
+    The shape is compound: the head outline in `HEAD_COLOR` and, on top of it, the
+    mouth in `MOUTH_COLOR`. Turtle shape coordinates have their front in the
+    positive y direction, which is what the constants use, so the mouth turns with
+    the head and no conversion is needed.
+
+    `turtle.Shape` is imported here and not at the top of the module, so that
+    importing this module needs neither a display nor `tkinter`.
+
+    @param screen The screen that learns the shape.
+    """
+    from turtle import Shape
+
+    shape = Shape("compound")
+    shape.addcomponent(HEAD_OUTLINE, HEAD_COLOR)
+    shape.addcomponent(MOUTH_OUTLINE, MOUTH_COLOR)
+    screen.register_shape(HEAD_SHAPE, shape)
 
 
 def bind_keys(screen: ScreenLike, snake: Snake) -> None:
@@ -192,6 +229,7 @@ def main() -> None:
     screen = Screen()
     configure_screen(screen)
     screen.tracer(0)
+    register_head_shape(screen)
     snake = Snake()
     food = Food()
     scoreboard = Scoreboard()

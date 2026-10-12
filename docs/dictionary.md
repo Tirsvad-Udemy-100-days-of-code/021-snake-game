@@ -11,13 +11,14 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-08 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-003 (Go) | [f13d004] |
+| 2026-10-08 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version, reviewed in RC-003 (Go) | [f13d004] |
+| 2026-10-13 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Segment and head describe the new look; added the term mouth | [b53be04] |
 
 ---
 
 ## Purpose and Scope
 
-Maps each Product Owner (PO) term to its professional information technology (IT) term. PO language: `en` (domain `it`), from the registry's `Languages` section. The PO terms are the words of the lectures of days 20 and 21 as the planning documents use them; the IT terms are the names in the code. The dictionary covers the vocabulary of the game; it exists so that the planning documents use one word for one thing and so that S02 can find the lectures' names in the code. It is adopted from the dictionary of the day-20 repository and gains the terms refresh and inheritance, which the day-21 lectures introduce.
+Maps each Product Owner (PO) term to its professional information technology (IT) term. PO language: `en` (domain `it`), from the registry's `Languages` section. The PO terms are the words of the lectures of days 20 and 21 as the planning documents use them; the IT terms are the names in the code. The dictionary covers the vocabulary of the game; it exists so that the planning documents use one word for one thing and so that S02 can find the lectures' names in the code. It is adopted from the dictionary of the day-20 repository and gains the terms refresh and inheritance, which the day-21 lectures introduce, and the term mouth, which S01's request of 2026-10-13 for a new look of the snake introduces.
 
 ## Dictionary
 
@@ -26,8 +27,9 @@ Maps each Product Owner (PO) term to its professional information technology (IT
 | window | en | Tk window | The desktop window that holds the screen and is opened when the game starts. | BC, SA, PP, MIL | PY |
 | screen | en | `Screen` | The drawing area that the game sets up (size, colour, title) and on which the snake is shown. | BC, SA, PP, MIL | PY |
 | snake | en | `Snake` | The creature the player steers, made of segments. | BC, SA, PP, MIL | PY |
-| segment | en | `Turtle` | One white square of the snake. | BC, SA, PP, MIL | PY |
-| head | en | `head` | The first segment, which leads the snake and is turned by the arrow keys. | BC, SA, PP, MIL | PY |
+| segment | en | `Turtle` | One square of the snake: light green in the body, dark green with a mouth in the head. | BC, SA, PP, MIL | PY |
+| head | en | `head` | The first segment, which leads the snake, has the mouth and is turned by the arrow keys. | BC, SA, PP, MIL | PY |
+| mouth | en | `MOUTH_OUTLINE` | The wedge cut into the front edge of the head, which turns with the head. | BC, SA, PP, MIL | PY |
 | tail | en | `segments[1:]` | Every segment behind the head; the game is over when the head touches one of them. | BC, SA, PP, MIL | PY |
 | body | en | `segments` | All segments of the snake, the head included, in order, the head first. | BC, SA, PP, MIL | PY |
 | starting position | en | `STARTING_POSITIONS` | One of the three places at which a segment is drawn when the game starts. | BC, MIL | PY |
@@ -64,3 +66,4 @@ Maps each Product Owner (PO) term to its professional information technology (IT
 [BC-001]: ./business-case.md
 [SA-001]: ./stakeholder-analysis.md
 [f13d004]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/f13d004447ceb631cb22c058d68a21b721a3f04c
+[b53be04]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/021-snake-game/commit/b53be043c2ed2ff35aec4399154826769b8cdf39

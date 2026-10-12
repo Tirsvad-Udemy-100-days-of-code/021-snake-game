@@ -6,7 +6,13 @@ Bootcamp*: a snake moves across a black 600 by 600 screen by itself and is steer
 with the arrow keys; it eats food, grows, and a score is shown at the top; the game
 is over when the head passes the wall or touches its own tail. Day 21 teaches class
 inheritance (`Food` and `Scoreboard` inherit from `Turtle`) and slicing (the tail is
-`segments[1:]`).
+`segments[1:]`). The snake has a light green body and a dark green head with a
+mouth, a deliberate change from the look of the lectures.
+
+![The game at a score of 5: a light green snake with a dark green head and a mouth, blue food and the score at the top](docs/images/snake-score-5.png)
+
+*The running game at a score of 5: a light green body, a dark green head with a
+mouth, the blue food and the white score.*
 
 The game has no runtime dependencies. The code keeps the names of the lectures
 (`Snake`, `create_snake`, `move`, `up`, `down`, `left`, `right`, `segments`,
@@ -86,8 +92,13 @@ python -m snake_game
 ```
 
 It opens a black 600 by 600 window titled "My Snake Game". The snake of three
-white squares starts in the middle and moves to the right by itself, 20 pixels
-every 0.1 seconds.
+squares starts in the middle and moves to the right by itself, 20 pixels every
+0.1 seconds. Its body is light green and its head is dark green with a mouth, a
+black wedge in the middle of the front edge, that turns with the head.
+
+![The game window at a score of 5, with the light green snake, its dark green head with a mouth and the blue food](docs/images/snake-score-5.png)
+
+*The game window at a score of 5.*
 
 | Key | Effect |
 | --- | --- |
@@ -154,6 +165,7 @@ The HTML is written to `build/doxygen/index.html`. A warning fails the build.
 .
 ├── .gitea/workflows/ci.yml    continuous integration (Gitea Actions)
 ├── docs/                      business case, plan, milestones, reviews
+│   └── images/                the screenshot shown here and on the wiki
 ├── src/snake_game/            the game
 │   ├── __init__.py
 │   ├── __main__.py            starts the game: python -m snake_game
@@ -163,6 +175,7 @@ The HTML is written to `build/doxygen/index.html`. A warning fails the build.
 │   ├── scoreboard.py          the Scoreboard class (inherits from Turtle)
 │   └── snake.py               the Snake class
 ├── tests/                     pytest tests (fakes.py holds the fake turtle and screen)
+├── wiki/                      wiki pages in English, Danish and Bahasa Melayu
 ├── Doxyfile                   source documentation settings
 ├── LICENSE
 ├── pyproject.toml             project configuration

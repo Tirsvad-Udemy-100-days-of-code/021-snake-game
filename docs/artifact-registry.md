@@ -14,9 +14,9 @@ document of a type. `Primary File` may contain a glob (e.g.
 | BC | Business Case | docs/business-case.md | 002 |
 | SA | Stakeholder Analysis | docs/stakeholder-analysis.md | 002 |
 | PP | Project Plan | docs/project-plan.md | 002 |
-| MIL | Milestone / Gateway | docs/milestones/*.md | 004 |
+| MIL | Milestone / Gateway | docs/milestones/*.md | 005 |
 | DICT | Domain Dictionary | docs/dictionary.md | 002 |
-| RC | SQA Review Record | docs/sqa/reviews/rc-*.md | 009 |
+| RC | SQA Review Record | docs/sqa/reviews/rc-*.md | 014 |
 
 ## Languages
 

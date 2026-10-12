@@ -23,11 +23,37 @@ SCREEN_BACKGROUND_COLOR: Final[str] = "black"
 ## @brief Title of the game window.
 SCREEN_TITLE: Final[str] = "My Snake Game"
 
-## @brief Shape of every segment of the snake.
+## @brief Shape of every body segment of the snake; the head has `HEAD_SHAPE`.
 SEGMENT_SHAPE: Final[str] = "square"
 
-## @brief Colour of every segment of the snake.
-SEGMENT_COLOR: Final[str] = "white"
+## @brief Colour of every body segment, that is every segment behind the head.
+BODY_COLOR: Final[str] = "light green"
+
+## @brief Colour of the head of the snake.
+HEAD_COLOR: Final[str] = "dark green"
+
+## @brief Name under which the shape of the head is registered with the screen.
+HEAD_SHAPE: Final[str] = "snake_head"
+
+## @brief Outline of the head: a 20 by 20 pixel square, as the corners (x, y).
+#
+#  These are turtle shape coordinates: the front of the shape is the positive y
+#  direction, which a turtle with heading 0 draws pointing right.
+HEAD_OUTLINE: Final[tuple[tuple[int, int], ...]] = (
+    (-10, -10),
+    (-10, 10),
+    (10, 10),
+    (10, -10),
+)
+
+## @brief Outline of the mouth: a wedge cut into the middle of the front edge.
+#
+#  It is 12 pixels wide at the edge and 8 pixels deep, in the same shape
+#  coordinates as `HEAD_OUTLINE`.
+MOUTH_OUTLINE: Final[tuple[tuple[int, int], ...]] = ((-6, 10), (0, 2), (6, 10))
+
+## @brief Colour of the mouth: the background colour, so that it looks cut out.
+MOUTH_COLOR: Final[str] = "black"
 
 ## @brief Where the segments are drawn when the game starts, from head to tail.
 #
