@@ -170,7 +170,7 @@ The HTML is written to `build/doxygen/index.html`. A warning fails the build.
 │   ├── scoreboard.py          the Scoreboard class (inherits from Turtle)
 │   └── snake.py               the Snake class
 ├── tests/                     pytest tests (fakes.py holds the fake turtle and screen)
-├── wiki/                      wiki pages in English, Danish and Bahasa Melayu
+├── docs/wiki/                 wiki pages in English, Danish and Bahasa Melayu
 ├── Doxyfile                   source documentation settings
 ├── LICENSE
 ├── pyproject.toml             project configuration
