@@ -139,9 +139,9 @@ def test_register_head_shape_builds_two_components_from_the_constants(
 
     register_head_shape(screen)  # the fake `Shape` is installed above
 
-    ((_, (shape_name, shape)),) = [
+    ((_, (shape_name, shape)),) = (
         call for call in screen.calls if call[0] == "register_shape"
-    ]
+    )
     assert isinstance(shape, FakeShape)
     assert shape_name == constants.HEAD_SHAPE
     assert shape.type == "compound"
